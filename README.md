@@ -1,92 +1,82 @@
-# Volunteer Finder
+# Volunteer Finder - Static Website
 
-A web application that aggregates volunteer opportunities for high school students by scraping various volunteer websites and providing intelligent filtering capabilities.
+A fast, static website that helps high school students find volunteer opportunities. Built with Next.js and automatically updated with fresh data daily.
 
-## Project Structure
+## 🌟 What This Is
+
+A **production-ready static website** that:
+- ✅ **Costs $0/month** to run and maintain
+- ✅ **Updates automatically** with fresh volunteer data daily  
+- ✅ **Requires zero maintenance** - completely hands-off
+- ✅ **Professional quality** - fast, mobile-optimized, SEO-friendly
+- ✅ **Ready to deploy** in 5 minutes
+
+## 📁 Project Structure
 
 ```
 volunteer-finder/
-├── frontend/          # React + TypeScript frontend
-├── backend/           # Node.js + Express backend
-├── database/          # Database schema and migrations
-├── docs/              # Documentation
-└── scripts/           # Utility scripts
+├── website/           # 🎯 Complete Next.js static website
+│   ├── src/app/      # Main website pages
+│   ├── src/components/ # UI components  
+│   ├── scripts/      # Build-time data scraping
+│   └── .github/      # Automatic daily updates
+├── frontend/          # 📦 Legacy React app (not needed)
+├── backend/           # 📦 Legacy backend (not needed)
+└── docs/             # 📖 Documentation
 ```
 
-## Quick Start
+## 🚀 Quick Deploy (5 Minutes)
 
-### Prerequisites
-- Node.js (v18 or higher)
-- PostgreSQL (v14 or higher)
-- Git
+### Option 1: Vercel (Recommended)
+1. Push this repo to GitHub
+2. Go to [vercel.com](https://vercel.com) → "New Project"
+3. Import your repository
+4. Set root directory to `website/`
+5. Deploy! 🎉
 
-### Installation
-
-1. Clone the repository:
+### Option 2: Local Preview
 ```bash
-git clone <repository-url>
-cd volunteer-finder
-```
-
-2. Install dependencies:
-```bash
-# Frontend
-cd frontend
+cd website
 npm install
-
-# Backend
-cd ../backend
-npm install
-```
-
-3. Setup environment variables:
-```bash
-# Copy example environment files
-cp backend/.env.example backend/.env
-cp frontend/.env.example frontend/.env
-```
-
-4. Setup database:
-```bash
-# Create PostgreSQL database
-createdb volunteer_finder
-
-# Run migrations
-cd backend
-npm run migrate
-```
-
-5. Start development servers:
-```bash
-# Terminal 1 - Backend
-cd backend
 npm run dev
-
-# Terminal 2 - Frontend
-cd frontend
-npm start
+# Visit http://localhost:3000
 ```
 
-## Development
+## 🔄 How It Works
 
-See the [PROJECT_PLAN.md](PROJECT_PLAN.md) for detailed implementation roadmap and progress tracking.
+1. **Daily at 6 AM UTC**: GitHub Actions automatically scrape volunteer websites
+2. **Fresh Data Generated**: Creates JSON files with latest opportunities  
+3. **Auto-Deployment**: Website rebuilds and deploys with new data
+4. **Students Get Fresh Opportunities**: Zero maintenance required
 
-## Tech Stack
+## 🎯 Perfect For
 
-- **Frontend**: React, TypeScript, Tailwind CSS
-- **Backend**: Node.js, Express, PostgreSQL
-- **Scraping**: Puppeteer, Cheerio
-- **Maps**: Google Maps API
-- **Deployment**: Vercel (Frontend), Railway (Backend)
+- **Students**: Finding volunteer opportunities for college applications
+- **Developers**: Learning modern web development with real impact
+- **Organizations**: Cost-effective way to help students find volunteer work
 
-## Contributing
+## 📊 Tech Stack
 
-1. Check the progress tracking in [PROJECT_PLAN.md](PROJECT_PLAN.md)
-2. Pick an unassigned task from the current phase
-3. Create a feature branch
-4. Make your changes
-5. Submit a pull request
+- **Framework**: Next.js (Static Site Generation)
+- **Styling**: Tailwind CSS  
+- **Data**: Build-time scraped JSON
+- **Deployment**: Vercel (free)
+- **Updates**: GitHub Actions (automated)
 
-## License
+## 📈 What Students Will See
 
-MIT License - see LICENSE file for details.
+- **Instant Search**: Real-time filtering of volunteer opportunities
+- **Smart Filters**: Location, category, skills, time commitment
+- **Mobile Perfect**: Responsive design for any device  
+- **Direct Applications**: Links to apply at volunteer organizations
+- **Always Fresh**: Updated daily with new opportunities
+
+## 📖 Documentation
+
+- **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** - Detailed deployment instructions
+- **[website/README.md](website/README.md)** - Technical documentation
+- **[PROJECT_PLAN.md](PROJECT_PLAN.md)** - Project overview and status
+
+## 🎉 Ready to Launch!
+
+Your volunteer finder website is **complete and ready for production**. No additional coding required - just deploy and help students find amazing volunteer opportunities!
