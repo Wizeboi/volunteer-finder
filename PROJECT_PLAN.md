@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-A web application that aggregates volunteer opportunities for high school students by scraping various volunteer websites and providing intelligent filtering capabilities to help students find relevant opportunities based on their location, skills, interests, and availability.
+A website that aggregates volunteer opportunities for high school students by scraping various volunteer websites and providing intelligent filtering capabilities to help students find relevant opportunities based on their location, skills, interests, and availability.
 
 ## Core Features
 

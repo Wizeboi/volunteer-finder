@@ -1,0 +1,49 @@
+name: Update Volunteer Data
+
+on:
+  schedule:
+    # Run daily at 6 AM UTC (adjust for your timezone)
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: website/package-lock.json
+        
+    - name: Install dependencies
+      run: |
+        cd website
+        npm ci
+        
+    - name: Scrape volunteer data
+      run: |
+        cd website
+        npm run scrape
+        
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add website/src/data/
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update volunteer opportunities data - $(date)"
+          git push
+        fi
+        
+    - name: Deploy to Vercel
+      if: github.ref == 'refs/heads/main'
+      run: |
+        echo "Data updated, Vercel will auto-deploy"

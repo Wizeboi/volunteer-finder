@@ -1,0 +1,16 @@
+{
+  "buildCommand": "npm run scrape && npm run build",
+  "outputDirectory": "out",
+  "framework": "nextjs",
+  "functions": {
+    "pages/api/**": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
